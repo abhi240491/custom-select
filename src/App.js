@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import CustomSelect from './customSelect';
 
-function App() {
+const App = () => {
+  const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
+
+  const handleSelectChange = (selectedOptions) => {
+    console.log('Selected options:', selectedOptions);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>Custom Select Component</h2>
+      <CustomSelect options={options} onChange={handleSelectChange} />
     </div>
   );
-}
+};
 
 export default App;
